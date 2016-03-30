@@ -1,0 +1,23 @@
+<div id="wrapper">
+  <div id="left">
+    <div id="columns">
+      <div class="column">
+        <%= render "tours" %>
+      </div>
+      <div class="column c2">
+        <%= render "hot_tours" %>
+      </div>
+      <div class="column c3">
+        <%= render "hotels" %>
+      </div>
+    </div>
+    <%= render "news_and_promotions" %>
+  </div>
+  <div id="right">
+    <%= render "guide" %>
+    <%= render "featured_tours" %>
+    <div>
+      <%= link_to t("travels.index.more_tours"), "#", id: "more" %>
+    </div>
+  </div>
+</div>

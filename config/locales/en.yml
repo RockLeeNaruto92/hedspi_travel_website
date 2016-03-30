@@ -1,23 +1,19 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  app_name: "Hedspi travel information system"
+  header:
+    home_page: "Home Page"
+    about: "About Company"
+    hot_tours: "Hot Tours"
+    hotels: "Hotels"
+    services: "Services"
+    contacts: "Contact us"
+  copy_right: "<p>Copyright ©. All rights reserved. Design by <a href='http://www.bestfreetemplates.info' target='_blank' title='Best Free Templates' class='bft'>BFT</a></p>"
+  travels:
+    index:
+      popular_tours: "POPULAR TOURS"
+      hot_tours: "HOT TOURS"
+      top_hotels: "TOP HOTEL DEALS"
+      more_tours: "more tours"
+      more_host_tours: "more host tours"
+      more_hotels: "more hotels"
+      more_info: "more info"
