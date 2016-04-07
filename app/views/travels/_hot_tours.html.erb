@@ -1,0 +1,14 @@
+<div>
+  <h4 class="title2"><%= t "travels.index.hot_tours" %></h4>
+  <% @places.sample(3).each do |place| %>
+    <div class="pic">
+      <%= link_to "#" do %>
+        <%= image_tag Image.of_place(place["id"]).url, size: "108x53" %>
+      <% end %>
+      <span><%= link_to place["name"], "#" %></span>
+      <br>
+    </div>
+  <% end %>
+
+  <a href="#" class="more"><%= t "travels.index.more_hot_tours" %></a>
+</div>

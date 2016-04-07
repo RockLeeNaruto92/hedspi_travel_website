@@ -1,0 +1,9 @@
+<div>
+  <h4 class="title3"><%= t "travels.index.top_hotels" %></h4>
+  <ul>
+    <% @hotels.sample(10).each do |hotel| %>
+      <li><%= link_to hotel["name"], "#" %></li>
+    <% end %>
+  </ul>
+  <a href="#" class="more"><%= t "travels.index.more_hotels" %></a>
+</div>
