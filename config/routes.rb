@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :travels, only: :index
   resources :places, only: [:index, :show]
   resources :tours, only: :index
+  resources :hotels, only: :index
 end

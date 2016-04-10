@@ -1,7 +1,7 @@
 class HotelServices
   class << self
     def client
-      @client ||= Savon::Client.new wsdl: "http://localhost:3332/hotel_services/wsdl"
+      @client ||= Savon::Client.new wsdl: "http://localhost:3332/hotel_basic_services/wsdl"
     end
 
     def get_all_hotels

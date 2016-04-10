@@ -33,3 +33,6 @@ en:
       available_tickets: "Number of available_tickets"
       cost: "Price per ticket"
       description: "Description"
+  hotels:
+    index:
+      all_hotels: "All hotels"
