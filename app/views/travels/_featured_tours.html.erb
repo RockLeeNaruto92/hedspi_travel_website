@@ -3,7 +3,7 @@
   <br>
   <% @places.sample(4).each do |place| %>
     <div class="photo">
-      <%= image_tag Image.of_place(place["id"]).url, size: "194x111" %>
+      <%= image_tag Image.of_place(place["id"]).first.url, size: "194x111" %>
       <br>
       <%= link_to place["name"], "#" %>
     </div>

@@ -1,0 +1,41 @@
+<div id="content">
+  <div id="main">
+    <p>
+      <%= link_to t("places.show.tours"), "#", class: "style4" %>
+      »
+      <%= @place["name"] %>
+    </p>
+    <div class="place-title-show"><%= @place["name"] %></div>
+    <div id="gallery">
+      <%= image_tag @images.first.url, size: "476x355" %>
+      <div>
+        <% @images.each do |image| %>
+          <%= link_to "#" do %>
+            <%= image_tag image.url, size: "78x58" %>
+          <% end %>
+        <% end %>
+        <%= link_to t("places.show.view_gallery"), "#", class: "view" %>
+      </div>
+    </div>
+    <div class="about">
+      <a href="#" id="banner">
+        <%= image_tag "banner", size: "187x301" %>
+      </a>
+      <div class="place-title-show">
+        <%= t "places.show.welcome_to", name: @place["name"] %>
+      </div>
+      <p class="place-description-show"><%= @place["description"] %></p>
+    </div>
+  </div>
+
+  <div id="sidebar">
+    <div class="news">
+      <div class="place-title-show"><%= t "places.show.tours" %></div>
+      <% @place["tour_codes"].each do |tour_code| %>
+        <div><span><%= tour_code %></span></div>
+      <% end %>
+
+      <%= link_to t("places.show.go_to_booking"), "#", id: "all" %>
+    </div>
+  </div>
+</div>
