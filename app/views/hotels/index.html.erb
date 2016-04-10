@@ -1,0 +1,20 @@
+<div id="wrapper">
+  <div id="left">
+    <div id="columns">
+      <div class="column">
+        <%= render "travels/tours" %>
+      </div>
+      <div class="column c2">
+        <%= render "travels/hot_tours" %>
+      </div>
+      <div class="column c3">
+        <%= render "travels/hotels" %>
+      </div>
+    </div>
+    <%= render "travels/news_and_promotions" %>
+  </div>
+  <div id="right">
+    <div class="place-title-show"><%= t "hotels.index.all_hotels" %></div>
+    <%= render "hotels" %>
+  </div>
+</div>

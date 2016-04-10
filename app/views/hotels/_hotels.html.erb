@@ -1,0 +1,7 @@
+<div class="numberlist">
+  <ol>
+    <% @hotels.each do |hotel| %>
+      <li><%= link_to hotel["name"], "#" %></li>
+    <% end %>
+  </ol>
+</div>
