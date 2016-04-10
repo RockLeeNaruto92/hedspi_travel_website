@@ -14,7 +14,6 @@
     <%= render "travels/news_and_promotions" %>
   </div>
   <div id="right">
-    <div class="place-title-show"><%= t "hotels.index.all_hotels" %></div>
-    <%= render "hotels" %>
+    <%= render params[:code].present? ? "hotel_details" : "hotels" %>
   </div>
 </div>
