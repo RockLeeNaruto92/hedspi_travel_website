@@ -23,3 +23,5 @@ en:
       view_gallery: "View Gallery"
       welcome_to: "Welcome to %{name}"
       go_to_booking: "Start booking"
+    index:
+      all_places: "All places"
