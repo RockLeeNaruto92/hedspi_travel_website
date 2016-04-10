@@ -1,7 +1,7 @@
 class TravelServices
   class << self
     def client
-      @client ||= Savon::Client.new wsdl: "http://localhost:3333/travel_services/wsdl"
+      @client ||= Savon::Client.new wsdl: "http://localhost:3333/travel_basic_services/wsdl"
     end
 
     def get_all_tours
@@ -19,6 +19,15 @@ class TravelServices
         JSON.parse result.to_hash[:get_all_places_response][:value]
       rescue
         []
+      end
+    end
+
+    def get_place_by_id id
+      begin
+        result = client.call :get_place_by_id, message: {id: id}
+        JSON.parse result.to_hash[:get_place_by_id_response][:value]
+      rescue
+        nil
       end
     end
   end

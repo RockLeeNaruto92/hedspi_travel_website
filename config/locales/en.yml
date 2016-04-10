@@ -17,3 +17,9 @@ en:
       more_host_tours: "more host tours"
       more_hotels: "more hotels"
       more_info: "more info"
+  places:
+    show:
+      tours: "Tours"
+      view_gallery: "View Gallery"
+      welcome_to: "Welcome to %{name}"
+      go_to_booking: "Start booking"
