@@ -1,0 +1,39 @@
+<div id="content">
+  <div id="main">
+    <p>
+      <%= link_to t("places.show.tours"), "#", class: "style4" %>
+      »
+      <%= t "places.index.all_places" %>
+    </p>
+    <div class="place-title-show"><%= t "places.index.all_places" %></div>
+    <div id="gallery">
+      <%= image_tag @images.sample.url, size: "476x355" %>
+      <div>
+        <% @images.sample(10).each do |image| %>
+          <%= link_to "#" do %>
+            <%= image_tag image.url, size: "78x58" %>
+          <% end %>
+        <% end %>
+        <%= link_to t("places.show.view_gallery"), "#", class: "view" %>
+      </div>
+    </div>
+    <div class="about">
+      <a href="#" id="banner">
+        <%= image_tag "banner", size: "187x301" %>
+      </a>
+      <p class="place-description-show">
+        <div class="numberlist">
+          <ol>
+            <% @places.each do |place| %>
+              <li><%= link_to place["name"], "#" %></li>
+            <% end %>
+          </ol>
+        </div>
+      </p>
+    </div>
+  </div>
+
+  <div id="sidebar">
+
+  </div>
+</div>
