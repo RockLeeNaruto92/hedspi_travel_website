@@ -13,6 +13,15 @@ class TravelServices
       end
     end
 
+    def get_tour_by_code code
+      begin
+        result = client.call :find_tour_by_code, message: {code: code}
+        JSON.parse result.to_hash[:find_tour_by_code_response][:value]
+      rescue
+        []
+      end
+    end
+
     def get_all_places
       begin
         result = client.call :get_all_places

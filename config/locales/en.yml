@@ -25,3 +25,11 @@ en:
       go_to_booking: "Start booking"
     index:
       all_places: "All places"
+  tours:
+    index:
+      tour_code: "Tour code"
+      start_date: "Start date"
+      tickets: "Number of tickets"
+      available_tickets: "Number of available_tickets"
+      cost: "Price per ticket"
+      description: "Description"
