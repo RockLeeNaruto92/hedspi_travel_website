@@ -46,3 +46,24 @@ en:
       rooms: "Number of rooms"
       available_rooms: "Number of available rooms"
       cost: "Price per room"
+  bookings:
+    index:
+      bookings: "Bookings"
+      place: "Place"
+      tour: "Tour"
+      hotel: "Hotel"
+      airline: "Airline"
+      flight: "Flight"
+      tickets: "Tickets"
+      customer_id_number: "Customer ID number"
+      company_name: "Company name"
+      company_phone: "Company phone"
+      company_address: "Company address"
+      submit: "Submit"
+    form:
+      placeholders:
+        booking_tickets: "Please input number of booking tickets"
+        customer_id_number: "Please input Customer ID Number"
+        company_name: "Please input Company name"
+        company_phone: "Please input Company phone"
+        company_address: "Please input Company address"
