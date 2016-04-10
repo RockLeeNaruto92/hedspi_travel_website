@@ -36,3 +36,13 @@ en:
   hotels:
     index:
       all_hotels: "All hotels"
+      code: "Hotel code"
+      star: "Star"
+      city: "City"
+      country: "Country"
+      address: "Address"
+      phone: "Phone"
+      website: "Website"
+      rooms: "Number of rooms"
+      available_rooms: "Number of available rooms"
+      cost: "Price per room"
