@@ -1,0 +1,57 @@
+<div id="content">
+  <div id="main">
+    <p>
+      <%= link_to t("places.show.tours"), "#", class: "style4" %>
+      »
+      <%= "#{@tour["place_name"]} - #{@tour["code"]}" %>
+    </p>
+    <div class="place-title-show"><%= "#{@tour["place_name"]} - #{@tour["code"]}" %></div>
+    <div id="gallery">
+      <%= image_tag @images.first.url, size: "476x355" %>
+      <div>
+        <% @images.each do |image| %>
+          <%= link_to "#" do %>
+            <%= image_tag image.url, size: "78x58" %>
+          <% end %>
+        <% end %>
+        <%= link_to t("places.show.view_gallery"), "#", class: "view" %>
+      </div>
+    </div>
+    <div class="about">
+      <a href="#" id="banner">
+        <%= image_tag "banner", size: "187x301" %>
+      </a>
+      <div class="place-title-show">
+        <%= t "places.show.welcome_to", name: @tour["place_name"] %>
+      </div>
+      <div class="place-description-show imglist">
+        <ul>
+          <li>
+            <h4><%= t "tours.index.tour_code" %></h4>
+            <a><%= @tour["code"] %></a>
+          </li>
+          <li>
+            <h4><%= t "tours.index.start_date" %></h4>
+            <a><%= @tour["start_date"].to_date %></a>
+          </li>
+          <li>
+            <h4><%= t "tours.index.tickets" %></h4>
+            <a><%= @tour["tickets"] %></a>
+          </li>
+          <li>
+            <h4><%= t "tours.index.available_tickets" %></h4>
+            <a><%= @tour["available_tickets"] %></a>
+          </li>
+          <li>
+            <h4><%= t "tours.index.cost" %></h4>
+            <a><%= @tour["cost"] %></a>
+          </li>
+          <li>
+            <h4><%= t "tours.index.description" %></h4>
+            <a><%= @tour["description"] %></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
