@@ -14,6 +14,10 @@
     <%= render "travels/news_and_promotions" %>
   </div>
   <div id="right">
-    <%= render "form" %>
+    <% if params[:info] == "success" %>
+      <div class="info">Successfully!</div>
+    <% else %>
+      <%= render "form" %>
+    <% end %>
   </div>
 </div>

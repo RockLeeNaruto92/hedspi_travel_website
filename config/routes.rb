@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   resources :places, only: [:index, :show]
   resources :tours, only: :index
   resources :hotels, only: :index
-  resources :bookings, only: :index
+  resources :bookings, only: [:index, :create]
 end
