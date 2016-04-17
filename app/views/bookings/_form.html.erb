@@ -1,40 +1,39 @@
 <div class="place-title-show"><%= t "bookings.index.bookings" %></div>
 
-
-<%= form_for :bookings do |f| %>
+<%= form_for :bookings, url: {action: "create"} do |f| %>
   <%= f.label t("bookings.index.place"), class: "form-label" %>
-  <%= f.select :place, options_for_select(@places.map{|place| [place["name"], place["id"]]}) %>
+  <%= f.select :placeId, options_for_select(@places.map{|place| [place["name"], place["id"]]}) %>
 
   <%= f.label t("bookings.index.tour"), class: "form-label" %>
-  <%= f.select :tour, options_for_select(@tours.map{|tour| [tour["code"], tour["id"]]}) %>
+  <%= f.select :tourId, options_for_select(@tours.map{|tour| [tour["code"], tour["id"]]}) %>
 
   <%= f.label t("bookings.index.hotel"), class: "form-label" %>
-  <%= f.select :hotel, options_for_select(@hotels.map{|hotel| [hotel["name"], hotel["id"]]}) %>
+  <%= f.select :hotelId, options_for_select(@hotels.map{|hotel| [hotel["name"], hotel["id"]]}) %>
 
   <%= f.label t("bookings.index.airline"), class: "form-label" %>
-  <%= f.select :airline, options_for_select(@airlines.map{|airline| [airline["name"], airline["id"]]}) %>
+  <%= f.select :airlineId, options_for_select(@airlines.map{|airline| [airline["name"], airline["id"]]}) %>
 
   <%= f.label t("bookings.index.flight"), class: "form-label" %>
-  <%= f.select :flight, options_for_select(@flights.map{|flight| [flight["code"], flight["id"]]}) %>
+  <%= f.select :flightId, options_for_select(@flights.map{|flight| [flight["code"], flight["id"]]}) %>
 
   <%= f.label t("bookings.index.tickets"), class: "form-label" %>
-  <%= f.text_field :booking_tickets,
+  <%= f.text_field :bookingTickets,
     placeholder: t("bookings.form.placeholders.booking_tickets"), type: "number" %>
 
   <%= f.label t("bookings.index.customer_id_number"), class: "form-label" %>
-  <%= f.text_field :customer_id_number,
+  <%= f.text_field :customerIdNumber,
     placeholder: t("bookings.form.placeholders.customer_id_number") %>
 
   <%= f.label t("bookings.index.company_name"), class: "form-label" %>
-  <%= f.text_field :company_name,
+  <%= f.text_field :companyName,
     placeholder: t("bookings.form.placeholders.company_name") %>
 
   <%= f.label t("bookings.index.company_phone"), class: "form-label" %>
-  <%= f.text_field :company_phone,
+  <%= f.text_field :companyPhone,
     placeholder: t("bookings.form.placeholders.company_phone") %>
 
   <%= f.label t("bookings.index.company_address"), class: "form-label" %>
-  <%= f.text_field :company_address,
+  <%= f.text_field :companyAddress,
     placeholder: t("bookings.form.placeholders.company_address") %>
 
   <%= f.submit t("bookings.index.submit") %>
