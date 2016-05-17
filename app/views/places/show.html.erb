@@ -32,10 +32,12 @@
     <div class="news">
       <div class="place-title-show"><%= t "places.show.tours" %></div>
       <% @place["tour_codes"].each do |tour_code| %>
-        <div><span><%= tour_code %></span></div>
+        <%= link_to tour_path(tour_code) do %>
+          <div><span><%= tour_code %></span></div>
+        <% end %>
       <% end %>
 
-      <%= link_to t("places.show.go_to_booking"), "#", id: "all" %>
+      <%= link_to t("places.show.go_to_booking"), bookings_path, id: "all" %>
     </div>
   </div>
 </div>

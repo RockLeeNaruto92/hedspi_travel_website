@@ -25,7 +25,7 @@
         <div class="numberlist">
           <ol>
             <% @places.each do |place| %>
-              <li><%= link_to place["name"], "#" %></li>
+              <li><%= link_to place["name"], place_path(place["id"]) %></li>
             <% end %>
           </ol>
         </div>
