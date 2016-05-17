@@ -6,4 +6,11 @@ Rails.application.routes.draw do
   resources :tours, only: :show
   resources :hotels, only: [:index, :show]
   resources :bookings, only: [:index, :create]
+
+  namespace :admin do
+    root "sessions#new"
+    get "login" => "sessions#new"
+    post "login" => "sessions#create"
+    delete "logout" => "sessions#destroy"
+  end
 end

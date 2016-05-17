@@ -1,0 +1,28 @@
+<div class="collapse navbar-collapse navbar-ex1-collapse">
+  <ul class="nav navbar-nav side-nav">
+    <li class="<%= "active" if params[:controller] == "admin/eastern_medicines" %>">
+      <%= link_to admin_eastern_medicines_path do %>
+        <i class="glyphicon glyphicon-briefcase glyphicon-th-large"></i>
+        <%= t "admin.layout.medicines_management" %>
+      <% end %>
+    </li>
+    <li class="<%= "active" if params[:controller] == "admin/diseases" %>">
+      <%= link_to admin_diseases_path do %>
+        <i class="glyphicon glyphicon-heart glyphicon-th-large"></i>
+        <%= t "admin.layout.diseases_management" %>
+      <% end %>
+    </li>
+    <li class="<%= "active" if params[:controller] == "admin/informations" %>">
+      <%= link_to admin_informations_path do %>
+        <i class="glyphicon glyphicon-info-sign glyphicon-th-large"></i>
+        <%= t "admin.layout.informations_management" %>
+      <% end %>
+    </li>
+    <li class="<%= "active" if params[:controller] == "admin/achievements" %>">
+      <%= link_to admin_achievements_path do %>
+        <i class="glyphicon glyphicon-book glyphicon-th-large"></i>
+        <%= t "admin.layout.achievements_management" %>
+      <% end %>
+    </li>
+  </ul>
+</div>

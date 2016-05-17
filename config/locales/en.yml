@@ -67,3 +67,11 @@ en:
         company_name: "Please input Company name"
         company_phone: "Please input Company phone"
         company_address: "Please input Company address"
+  admin:
+    warning: Cảnh báo
+    login:
+      username: Tài khoản
+      password: Mật khẩu
+      login: Đăng nhập
+      welcome: Xin chào!
+      errors: Tài khoản hoặc mật khẩu không đúng!
