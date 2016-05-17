@@ -2,13 +2,13 @@
   <h4 class="title2"><%= t "travels.index.hot_tours" %></h4>
   <% @places.sample(3).each do |place| %>
     <div class="pic">
-      <%= link_to "#" do %>
+      <%= link_to place_path(place["id"]) do %>
         <%= image_tag Image.of_place(place["id"]).first.url, size: "108x53" %>
       <% end %>
-      <span><%= link_to place["name"], "#" %></span>
+      <span><%= link_to place["name"], place_path(place["id"]) %></span>
       <br>
     </div>
   <% end %>
 
-  <a href="#" class="more"><%= t "travels.index.more_hot_tours" %></a>
+  <%= link_to t("travels.index.more_hot_tours"), places_path, class: "more" %>
 </div>
