@@ -2,8 +2,8 @@
   <h4 class="title1"><%= t "travels.index.popular_tours" %></h4>
   <ul>
     <% @places.sample(10).each do |place| %>
-      <li><%= link_to place["name"], "#" %></li>
+      <li><%= link_to place["name"], place_path(place["id"]) %></li>
     <% end %>
   </ul>
-  <a href="#" class="more"><%= t "travels.index.more_tours" %></a>
+  <%= link_to t("travels.index.more_tours"), places_path, class: "more" %>
 </div>

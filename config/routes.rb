@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :travels, only: :index
   resources :places, only: [:index, :show]
-  resources :tours, only: :index
-  resources :hotels, only: :index
+  resources :tours, only: [:index, :show]
+  resources :hotels, only: [:index, :show]
   resources :bookings, only: [:index, :create]
 end
