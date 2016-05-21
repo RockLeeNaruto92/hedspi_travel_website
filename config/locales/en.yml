@@ -75,3 +75,13 @@ en:
       travels_management: "Travels Management"
       logout: "Logout"
       profile: "Profile"
+    places:
+      index: "Places list"
+      name: "Name"
+      code: "Code"
+      city: "City"
+      country: "Country"
+      address: "Address"
+      services: "Services"
+      new: "New"
+      confirm: "Are you sure?"
