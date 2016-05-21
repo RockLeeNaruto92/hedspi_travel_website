@@ -25,4 +25,12 @@ class Admin::PlacesController < Admin::BaseController
       render "new"
     end
   end
+
+  def edit
+    @place = Place.new (TravelServices.get_place_by_id params[:id])
+  end
+
+  def update
+    redirect_to admin_places_path
+  end
 end
