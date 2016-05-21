@@ -68,6 +68,9 @@ en:
         company_phone: "Please input Company phone"
         company_address: "Please input Company address"
   admin:
+    action:
+      submit: Submit
+      cancel: Cancel
     layout:
       places_management: "Places Management"
       tours_management: "Tours Management"
@@ -83,5 +86,9 @@ en:
       country: "Country"
       address: "Address"
       services: "Services"
+      description: "Description"
       new: "New"
       confirm: "Are you sure?"
+      new: "New"
+      errors:
+        connection: "Error on connecting to travel services."
