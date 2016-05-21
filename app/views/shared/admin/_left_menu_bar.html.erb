@@ -1,0 +1,28 @@
+<div class="collapse navbar-collapse navbar-ex1-collapse">
+  <ul class="nav navbar-nav side-nav">
+    <li class="<%= "active" if params[:controller] == "admin/places" %>">
+      <%= link_to admin_places_path do %>
+        <i class="glyphicon glyphicon-briefcase glyphicon-th-large"></i>
+        <%= t "admin.layout.places_management" %>
+      <% end %>
+    </li>
+    <li class="<%= "active" if params[:controller] == "admin/tours" %>">
+      <%= link_to "#" do %>
+        <i class="glyphicon glyphicon-heart glyphicon-th-large"></i>
+        <%= t "admin.layout.tours_management" %>
+      <% end %>
+    </li>
+    <li class="<%= "active" if params[:controller] == "admin/hotels" %>">
+      <%= link_to "#" do %>
+        <i class="glyphicon glyphicon-info-sign glyphicon-th-large"></i>
+        <%= t "admin.layout.hotels_management" %>
+      <% end %>
+    </li>
+    <li class="<%= "active" if params[:controller] == "admin/" %>">
+      <%= link_to "#" do %>
+        <i class="glyphicon glyphicon-book glyphicon-th-large"></i>
+        <%= t "admin.layout.travels_management" %>
+      <% end %>
+    </li>
+  </ul>
+</div>

@@ -67,3 +67,11 @@ en:
         company_name: "Please input Company name"
         company_phone: "Please input Company phone"
         company_address: "Please input Company address"
+  admin:
+    layout:
+      places_management: "Places Management"
+      tours_management: "Tours Management"
+      hotels_management: "Hotels Management"
+      travels_management: "Travels Management"
+      logout: "Logout"
+      profile: "Profile"
