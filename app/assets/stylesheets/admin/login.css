@@ -1,0 +1,9 @@
+.login {
+  margin-top: 175px;
+  height: 300px;
+}
+body {
+  height: 100vh;
+  background-image: url(/assets/BGlogin.jpg);
+  background-size: 100% 100%;
+}

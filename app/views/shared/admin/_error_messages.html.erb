@@ -1,0 +1,18 @@
+<% if object.errors.any? %>
+  <div class="alert alert-warning">
+    <div align="left">
+      <h4>
+        <strong>
+          <span class="glyphicon glyphicon-ban-circle"></span>
+          <%= t "admin.warning" %>!
+        </strong>
+      </h4>
+    </div>
+    <% object.errors.messages.each do |_, message| %>
+      <div align="left" class="errors_message">
+        <i class="fa fa-genderless"></i>
+        <%= message.first %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
