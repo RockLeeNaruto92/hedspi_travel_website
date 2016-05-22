@@ -12,5 +12,7 @@ Rails.application.routes.draw do
     resources :places
     resources :tours
     resources :hotels
+    resources :airlines
+    resources :flights
   end
 end

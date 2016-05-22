@@ -75,7 +75,8 @@ en:
       places_management: "Places Management"
       tours_management: "Tours Management"
       hotels_management: "Hotels Management"
-      travels_management: "Travels Management"
+      airlines_management: "Airlines Management"
+      flights_management: "Flights Management"
       logout: "Logout"
       profile: "Profile"
     places:
@@ -121,6 +122,28 @@ en:
       phone: "Phone"
       cost: "Price"
       description: "Description"
+      new: "New"
+      confirm: "Are you sure?"
+      new: "New"
+      errors:
+        connection: "Error on connecting to travel services."
+    airlines:
+      index: "Airlines list"
+      name: "Name"
+      code: "Code"
+      website: "Website"
+      new: "New"
+      confirm: "Are you sure?"
+      new: "New"
+      errors:
+        connection: "Error on connecting to travel services."
+    flights:
+      index: "Airlines list"
+      start_time: "Start time"
+      end_time: "End time"
+      start_point: "Start point"
+      end_point: "End point"
+      code: "Code"
       new: "New"
       confirm: "Are you sure?"
       new: "New"

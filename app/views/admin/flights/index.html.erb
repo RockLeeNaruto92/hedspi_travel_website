@@ -1,0 +1,42 @@
+<% content_for :content_head, t("admin.flights.index") %>
+
+<div class="col-md-10">
+  <%= link_to new_admin_flight_path, class: "btn btn-link" do %>
+    <i class="glyphicon glyphicon-plus"></i>
+    <%= t "admin.flights.new" %>
+  <% end %>
+</div>
+<div class="table-responsive col-md-12">
+  <table class="table table-bordered table-hover table-striped">
+    <thead>
+      <tr>
+        <th><%= t "admin.flights.code" %></th>
+        <th class="text-center"><%= t "admin.flights.start_time" %></th>
+        <th class="text-center"><%= t "admin.flights.end_time" %></th>
+        <th class="text-center"><%= t "admin.flights.start_point" %></th>
+        <th class="text-center"><%= t "admin.flights.end_point" %></th>
+        <th class="text-center"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @flights.each do |flight| %>
+        <tr>
+          <td class="col-sm-2"><%= link_to flight["code"], "#" %></td>
+          <td class="col-sm-2"><%= truncate(raw strip_tags(flight["start_time"])) %></td>
+          <td class="col-sm-2"><%= truncate(raw strip_tags(flight["end_time"])) %></td>
+          <td class="col-sm-2"><%= truncate(raw strip_tags(flight["start_point"])) %></td>
+          <td class="col-sm-2"><%= truncate(raw strip_tags(flight["end_point"])) %></td>
+          <td class="col-sm-2 text-center">
+            <%= link_to edit_admin_flight_path(flight["id"]) do %>
+              <i class="glyphicon glyphicon-edit"></i>
+            <% end %> |
+            <%= link_to "#", data: {confirm: t("admin.flights.confirm")},
+              method: :delete do %>
+              <i class="glyphicon glyphicon-trash"></i>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
