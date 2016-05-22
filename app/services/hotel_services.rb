@@ -21,5 +21,14 @@ class HotelServices
         {}
       end
     end
+
+    def add_new_hotel params
+      begin
+        result = client.call :add_new_hotel, message: params
+        result.to_hash[:add_new_hotel_response][:value]
+      rescue
+        nil
+      end
+    end
   end
 end

@@ -119,6 +119,7 @@ en:
       address: "Address"
       website: "Website"
       phone: "Phone"
+      cost: "Price"
       description: "Description"
       new: "New"
       confirm: "Are you sure?"
