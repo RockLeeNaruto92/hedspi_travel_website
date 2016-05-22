@@ -57,5 +57,14 @@ class TravelServices
         nil
       end
     end
+
+    def update_place params
+      begin
+        result = client.call :update_place, message: params
+        result.to_hash[:update_place_response][:value]
+      rescue
+        nil
+      end
+    end
   end
 end
