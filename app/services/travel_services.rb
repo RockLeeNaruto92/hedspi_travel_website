@@ -48,5 +48,14 @@ class TravelServices
         nil
       end
     end
+
+    def add_new_tour params
+      begin
+        result = client.call :add_new_tour, message: params
+        result.to_hash[:add_new_tour_response][:value]
+      rescue
+        nil
+      end
+    end
   end
 end

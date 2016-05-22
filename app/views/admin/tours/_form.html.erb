@@ -1,0 +1,56 @@
+<%= form_for [:admin, @tour],
+  html: {class: "form-horizontal", role: "form", id: "user-form"} do |f| %>
+
+  <div>
+    <%= render partial: "shared/admin/error_messages",
+      locals: {object: @tour} %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label t("admin.tours.code"), class: "control-label left-alignment-label col-sm-3" %>
+    <div class="col-sm-9">
+      <%= f.text_field :code, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label t("admin.tours.place"), class: "control-label left-alignment-label col-sm-3" %>
+    <div class="col-sm-9">
+      <%= f.select :placeID, @places.map{|place| [place["name"], place["id"]]} %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label t("admin.tours.start_date"), class: "control-label left-alignment-label col-sm-3" %>
+    <div class="col-sm-9">
+      <%= f.date_field :startDate, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label t("admin.tours.tickets"), class: "control-label left-alignment-label col-sm-3" %>
+    <div class="col-sm-9">
+      <%= f.number_field :tickets, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label t("admin.tours.cost"), class: "control-label left-alignment-label col-sm-3" %>
+    <div class="col-sm-9">
+      <%= f.number_field :cost, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label t("admin.tours.description"), class: "control-label left-alignment-label col-sm-3" %>
+    <div class="col-sm-9">
+      <%= f.text_area :description, class: "form-control tinymce", rows: 10 %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-9 col-sm-offset-3">
+      <%= f.submit t("admin.action.submit"), class: "btn btn-primary" %>
+      <%= link_to admin_places_path do %>
+        <%= button_tag t("admin.action.cancel"), class: "btn btn-default",
+          type: :button %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

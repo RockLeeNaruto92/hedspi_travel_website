@@ -32,3 +32,8 @@ form {
 .form-label{
   font-size: 15px;
 }
+
+input[type=number] {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
