@@ -28,7 +28,6 @@ class Admin::PlacesController < Admin::BaseController
 
   def edit
     @place = Place.new (TravelServices.get_place_by_id params[:id])
-    byebug
   end
 
   def update
