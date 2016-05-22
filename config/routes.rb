@@ -11,5 +11,6 @@ Rails.application.routes.draw do
     root "places#index"
     resources :places
     resources :tours
+    resources :hotels
   end
 end
