@@ -39,5 +39,23 @@ class AirlineServices
         nil
       end
     end
+
+    def update_flight params
+      begin
+        result = client.call :update_flight, message: params
+        result.to_hash[:update_flight_response][:value]
+      rescue
+        nil
+      end
+    end
+
+    def get_flight_by_id id
+      begin
+        result = client.call :get_flight_by_id, message: {id: id}
+        JSON.parse result.to_hash[:get_flight_by_id_response][:value]
+      rescue
+        nil
+      end
+    end
   end
 end
