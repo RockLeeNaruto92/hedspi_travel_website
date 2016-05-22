@@ -21,5 +21,14 @@ class AirlineServices
         []
       end
     end
+
+    def add_new_airline params
+      begin
+        result = client.call :add_new_airline, message: params
+        result.to_hash[:add_new_airline_response][:value]
+      rescue
+        nil
+      end
+    end
   end
 end
