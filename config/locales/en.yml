@@ -93,7 +93,7 @@ en:
       errors:
         connection: "Error on connecting to travel services."
     tours:
-      index: "Places list"
+      index: "Tours list"
       name: "Name"
       code: "Code"
       tickets: "Tickets"
@@ -102,6 +102,24 @@ en:
       cost: "Price"
       place: "Place"
       start_date: "Start date"
+      new: "New"
+      confirm: "Are you sure?"
+      new: "New"
+      errors:
+        connection: "Error on connecting to travel services."
+    hotels:
+      index: "Hotels list"
+      name: "Name"
+      code: "Code"
+      rooms: "Rooms"
+      available_rooms: "Available rooms"
+      star: "Star"
+      city: "City"
+      country: "Country"
+      address: "Address"
+      website: "Website"
+      phone: "Phone"
+      description: "Description"
       new: "New"
       confirm: "Are you sure?"
       new: "New"
