@@ -92,3 +92,16 @@ en:
       new: "New"
       errors:
         connection: "Error on connecting to travel services."
+    tours:
+      index: "Places list"
+      name: "Name"
+      code: "Code"
+      tickets: "Tickets"
+      available_tickets: "Available tickets"
+      description: "Description"
+      cost: "Price"
+      new: "New"
+      confirm: "Are you sure?"
+      new: "New"
+      errors:
+        connection: "Error on connecting to travel services."
