@@ -15,6 +15,8 @@
         <th class="text-center"><%= t "admin.flights.end_time" %></th>
         <th class="text-center"><%= t "admin.flights.start_point" %></th>
         <th class="text-center"><%= t "admin.flights.end_point" %></th>
+        <th class="text-center"><%= t "admin.flights.tickets" %></th>
+        <th class="text-center"><%= t "admin.flights.available_tickets" %></th>
         <th class="text-center"></th>
       </tr>
     </thead>
@@ -24,8 +26,10 @@
           <td class="col-sm-2"><%= link_to flight["code"], "#" %></td>
           <td class="col-sm-2"><%= truncate(raw strip_tags(flight["start_time"])) %></td>
           <td class="col-sm-2"><%= truncate(raw strip_tags(flight["end_time"])) %></td>
-          <td class="col-sm-2"><%= truncate(raw strip_tags(flight["start_point"])) %></td>
-          <td class="col-sm-2"><%= truncate(raw strip_tags(flight["end_point"])) %></td>
+          <td class="col-sm-1"><%= truncate(raw strip_tags(flight["start_point"])) %></td>
+          <td class="col-sm-1"><%= truncate(raw strip_tags(flight["end_point"])) %></td>
+          <td class="col-sm-1"><%= truncate(raw strip_tags(flight["seats"].to_s)) %></td>
+          <td class="col-sm-1"><%= truncate(raw strip_tags(flight["available_seats"].to_s)) %></td>
           <td class="col-sm-2 text-center">
             <%= link_to edit_admin_flight_path(flight["id"]) do %>
               <i class="glyphicon glyphicon-edit"></i>
