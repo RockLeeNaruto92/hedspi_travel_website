@@ -39,5 +39,50 @@ class TravelServices
         nil
       end
     end
+
+    def get_tour_by_id id
+      begin
+        result = client.call :get_tour_by_id, message: {id: id}
+        JSON.parse result.to_hash[:get_tour_by_id_response][:value]
+      rescue
+        nil
+      end
+    end
+
+    def add_new_place params
+      begin
+        result = client.call :add_new_place, message: params
+        result.to_hash[:add_new_place_response][:value]
+      rescue
+        nil
+      end
+    end
+
+    def add_new_tour params
+      begin
+        result = client.call :add_new_tour, message: params
+        result.to_hash[:add_new_tour_response][:value]
+      rescue
+        nil
+      end
+    end
+
+    def update_place params
+      begin
+        result = client.call :update_place, message: params
+        result.to_hash[:update_place_response][:value]
+      rescue
+        nil
+      end
+    end
+
+    def update_tour params
+      begin
+        result = client.call :update_tour, message: params
+        result.to_hash[:update_tour_response][:value]
+      rescue
+        nil
+      end
+    end
   end
 end

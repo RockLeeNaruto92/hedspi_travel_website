@@ -25,4 +25,27 @@ class Admin::HotelsController < Admin::BaseController
       render "new"
     end
   end
+
+  def edit
+    @hotel = Hotel.new (HotelServices.get_hotel_by_id params[:id])
+  end
+
+  def update
+    @hotel = Hotel.new (HotelServices.get_hotel_by_id params[:id])
+    result = HotelServices.update_hotel params[:hotel]
+    if result
+      if result == "Successfully!"
+        flash[:success] = "Successfully!"
+        redirect_to admin_hotels_path
+      else
+        flash[:danger] = "Failure!"
+        @hotel.errors[:warning] = JSON.parse result
+        render "edit"
+      end
+    else
+      flash[:danger] = "Failure!"
+      @hotel.errors[:connection] = t "admin.hotels.errors.connection"
+      render "edit"
+    end
+  end
 end
