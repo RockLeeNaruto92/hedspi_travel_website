@@ -9,7 +9,7 @@ class BookingsController < ApplicationController
 
     result = BookingServices.booking params[:bookings]
 
-    if result
+    if result == "success"
       redirect_to bookings_path({info: :success})
     else
       redirect_to bookings_path({info: :failure, bookings: params[:bookings]})
