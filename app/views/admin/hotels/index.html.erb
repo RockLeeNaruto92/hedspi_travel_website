@@ -14,7 +14,9 @@
         <th class="text-center"><%= t "admin.places.star" %></th>
         <th class="text-center"><%= t "admin.places.address" %></th>
         <th class="text-center"><%= t "admin.places.city" %></th>
-        <th class="text-center"><%= t "admin.places.country" %></th>
+        <th class="text-center"><%= t "admin.places.rooms" %></th>
+        <th class="text-center"><%= t "admin.places.available_rooms" %></th>
+        <th class="text-center"><%= t "admin.places.action" %></th>
       </tr>
     </thead>
     <tbody>
@@ -22,8 +24,10 @@
         <tr>
           <td class="col-sm-2"><%= link_to hotel["name"], "#" %></td>
           <td class="col-sm-2"><%= truncate(raw strip_tags(hotel["star"].to_s)) %></td>
-          <td class="col-sm-2"><%= truncate(raw strip_tags(hotel["address"])) %></td>
-          <td class="col-sm-2"><%= truncate(raw strip_tags(hotel["city"])) %></td>
+          <td class="col-sm-1"><%= truncate(raw strip_tags(hotel["address"])) %></td>
+          <td class="col-sm-1"><%= truncate(raw strip_tags(hotel["city"])) %></td>
+          <td class="col-sm-1"><%= truncate(raw strip_tags(hotel["total_rooms"].to_s)) %></td>
+          <td class="col-sm-1"><%= truncate(raw strip_tags(hotel["available_rooms"].to_s)) %></td>
           <td class="col-sm-2 text-center">
             <%= link_to edit_admin_hotel_path(hotel["id"]) do %>
               <i class="glyphicon glyphicon-edit"></i>

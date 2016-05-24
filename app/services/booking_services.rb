@@ -1,7 +1,7 @@
 class BookingServices
   class << self
     def client
-      @client ||= Savon::Client.new wsdl: "http://localhost:9090/ode/processes/Booking?wsdl"
+      @client ||= Savon::Client.new wsdl: "http://localhost:8080/ode/processes/Booking?wsdl"
     end
 
     def booking params
