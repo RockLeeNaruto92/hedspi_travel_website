@@ -1,4 +1,6 @@
 <%= form_for [:admin, @airline],
+  url: (["new", "create"].include?(request[:action]) ? admin_airlines_path : admin_airline_path(@airline.id)),
+  method: (["new", "create"].include?(request[:action]) ? "POST" : "PUT"),
   html: {class: "form-horizontal", role: "form", id: "user-form"} do |f| %>
 
   <div>
@@ -6,6 +8,7 @@
       locals: {object: @airline} %>
   </div>
 
+  <%= f.hidden_field :id %>
   <div class="form-group">
     <%= f.label t("admin.airlines.code"), class: "control-label left-alignment-label col-sm-3" %>
     <div class="col-sm-9">

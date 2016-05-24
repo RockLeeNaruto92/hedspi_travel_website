@@ -21,5 +21,32 @@ class HotelServices
         {}
       end
     end
+
+    def get_hotel_by_id id
+      begin
+        result = client.call :get_hotel_by_id, message: {id: id}
+        JSON.parse result.to_hash[:get_hotel_by_id_response][:value]
+      rescue
+        nil
+      end
+    end
+
+    def add_new_hotel params
+      begin
+        result = client.call :add_new_hotel, message: params
+        result.to_hash[:add_new_hotel_response][:value]
+      rescue
+        nil
+      end
+    end
+
+    def update_hotel params
+      begin
+        result = client.call :update_hotel, message: params
+        result.to_hash[:update_hotel_response][:value]
+      rescue
+        nil
+      end
+    end
   end
 end
