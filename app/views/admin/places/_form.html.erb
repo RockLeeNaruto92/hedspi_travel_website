@@ -1,0 +1,65 @@
+<%= form_for @place,
+  url: (["new", "create"].include?(request[:action]) ? admin_places_path : admin_place_path(@place.id)),
+  method: (["new", "create"].include?(request[:action]) ? "POST" : "PUT"),
+  html: {class: "form-horizontal", role: "form", id: "user-form"} do |f| %>
+
+  <div>
+    <%= render partial: "shared/admin/error_messages",
+      locals: {object: @place} %>
+  </div>
+
+  <%= f.hidden_field :id %>
+  <div class="form-group">
+    <%= f.label t("admin.places.code"), class: "control-label left-alignment-label col-sm-3" %>
+    <div class="col-sm-9">
+      <%= f.text_field :code, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label t("admin.places.name"), class: "control-label left-alignment-label col-sm-3" %>
+    <div class="col-sm-9">
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label t("admin.places.city"), class: "control-label left-alignment-label col-sm-3" %>
+    <div class="col-sm-9">
+      <%= f.text_field :city, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label t("admin.places.country"), class: "control-label left-alignment-label col-sm-3" %>
+    <div class="col-sm-9">
+      <%= f.text_field :country, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label t("admin.places.address"), class: "control-label left-alignment-label col-sm-3" %>
+    <div class="col-sm-9">
+      <%= f.text_field :address, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label t("admin.places.services"), class: "control-label left-alignment-label col-sm-3" %>
+    <div class="col-sm-9">
+      <%= f.text_area :services, class: "form-control tinymce", rows: 10 %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label t("admin.places.description"), class: "control-label left-alignment-label col-sm-3" %>
+    <div class="col-sm-9">
+      <%= f.text_area :description, class: "form-control tinymce", rows: 10 %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-9 col-sm-offset-3">
+      <%= f.submit t("admin.action.submit"), class: "btn btn-primary" %>
+      <%= link_to admin_places_path do %>
+        <%= button_tag t("admin.action.cancel"), class: "btn btn-default",
+          type: :button %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

@@ -21,6 +21,7 @@ gem "tinymce-rails"
 gem "unicorn"
 gem "friendly_id"
 gem "savon"
+gem "active_attr"
 
 group :development, :test do
   gem "pry-byebug"
