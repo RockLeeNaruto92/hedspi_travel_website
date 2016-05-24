@@ -2,39 +2,43 @@
 
 <%= form_for :bookings, url: {action: "create"} do |f| %>
   <%= f.label t("bookings.index.place"), class: "form-label" %>
-  <%= f.select :placeId, options_for_select(@places.map{|place| [place["name"], place["id"]]}) %>
+  <%= f.select :placeId, options_for_select(@places.map{|place| [place["name"], place["id"]]}, get_booking_params(params, :placeId) || 1) %>
 
   <%= f.label t("bookings.index.tour"), class: "form-label" %>
-  <%= f.select :tourId, options_for_select(@tours.map{|tour| [tour["code"], tour["id"]]}) %>
+  <%= f.select :tourId, options_for_select(@tours.map{|tour| [tour["code"], tour["id"]]}, get_booking_params(params, :tourId) || 1) %>
 
   <%= f.label t("bookings.index.hotel"), class: "form-label" %>
-  <%= f.select :hotelId, options_for_select(@hotels.map{|hotel| [hotel["name"], hotel["id"]]}) %>
+  <%= f.select :hotelId, options_for_select(@hotels.map{|hotel| [hotel["name"], hotel["id"]]}, get_booking_params(params, :hotelId) || 1) %>
 
   <%= f.label t("bookings.index.airline"), class: "form-label" %>
-  <%= f.select :airlineId, options_for_select(@airlines.map{|airline| [airline["name"], airline["id"]]}) %>
+  <%= f.select :airlineId, options_for_select(@airlines.map{|airline| [airline["name"], airline["id"]]}, get_booking_params(params, :airlineId) || 1) %>
 
   <%= f.label t("bookings.index.flight"), class: "form-label" %>
-  <%= f.select :flightId, options_for_select(@flights.map{|flight| [flight["code"], flight["id"]]}) %>
+  <%= f.select :flightId, options_for_select(@flights.map{|flight| [flight["code"], flight["id"]]}, get_booking_params(params, :flightId) || 1) %>
 
   <%= f.label t("bookings.index.tickets"), class: "form-label" %>
   <%= f.text_field :bookingTickets,
-    placeholder: t("bookings.form.placeholders.booking_tickets"), type: "number" %>
+    placeholder: t("bookings.form.placeholders.booking_tickets"), type: "number", value: get_booking_params(params, :bookingTickets) %>
 
   <%= f.label t("bookings.index.customer_id_number"), class: "form-label" %>
   <%= f.text_field :customerIdNumber,
-    placeholder: t("bookings.form.placeholders.customer_id_number") %>
+    placeholder: t("bookings.form.placeholders.customer_id_number"),
+    value: get_booking_params(params, :customerIdNumber) %>
 
   <%= f.label t("bookings.index.company_name"), class: "form-label" %>
   <%= f.text_field :companyName,
-    placeholder: t("bookings.form.placeholders.company_name") %>
+    placeholder: t("bookings.form.placeholders.company_name"),
+    value: get_booking_params(params, :companyName)  %>
 
   <%= f.label t("bookings.index.company_phone"), class: "form-label" %>
   <%= f.text_field :companyPhone,
-    placeholder: t("bookings.form.placeholders.company_phone") %>
+    placeholder: t("bookings.form.placeholders.company_phone"),
+    value: get_booking_params(params, :companyPhone)  %>
 
   <%= f.label t("bookings.index.company_address"), class: "form-label" %>
   <%= f.text_field :companyAddress,
-    placeholder: t("bookings.form.placeholders.company_address") %>
+    placeholder: t("bookings.form.placeholders.company_address"),
+    value: get_booking_params(params, :companyAddress)  %>
 
   <%= f.submit t("bookings.index.submit") %>
 <% end %>

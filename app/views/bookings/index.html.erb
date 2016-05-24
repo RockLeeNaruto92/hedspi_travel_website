@@ -17,6 +17,15 @@
     <% if params[:info] == "success" %>
       <div class="info">Successfully!</div>
     <% else %>
+      <% if params[:info].present? %>
+        <div class="info">
+          <h4>Can not book the tickets because of one of below reasons: </h4><br>
+          <ul>
+            <li>Can not connect to webservices </li>
+            <li>Inputed information is incorrect!</li>
+          </ul>
+        </div>
+      <% end %>
       <%= render "form" %>
     <% end %>
   </div>
