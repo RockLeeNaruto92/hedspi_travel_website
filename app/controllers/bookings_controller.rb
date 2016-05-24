@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
     if result
       redirect_to bookings_path({info: :success})
     else
-      render :index
+      redirect_to bookings_path({info: :failure, bookings: params[:bookings]})
     end
   end
 
