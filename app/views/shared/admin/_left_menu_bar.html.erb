@@ -18,13 +18,13 @@
         <%= t "admin.layout.hotels_management" %>
       <% end %>
     </li>
-    <li class="<%= "active" if params[:controller] == "admin/" %>">
+    <li class="<%= "active" if params[:controller] == "admin/airlines" %>">
       <%= link_to admin_airlines_path do %>
         <i class="glyphicon glyphicon-book glyphicon-th-large"></i>
         <%= t "admin.layout.airlines_management" %>
       <% end %>
     </li>
-    <li class="<%= "active" if params[:controller] == "admin/" %>">
+    <li class="<%= "active" if params[:controller] == "admin/flights" %>">
       <%= link_to admin_flights_path do %>
         <i class="glyphicon glyphicon-book glyphicon-th-large"></i>
         <%= t "admin.layout.flights_management" %>
