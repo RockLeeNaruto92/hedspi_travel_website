@@ -1,0 +1,40 @@
+<% content_for :content_head, t("admin.places.index") %>
+
+<div class="col-md-10">
+  <%= link_to new_admin_place_path, class: "btn btn-link" do %>
+    <i class="glyphicon glyphicon-plus"></i>
+    <%= t "admin.places.new" %>
+  <% end %>
+</div>
+<div class="table-responsive col-md-12">
+  <table class="table table-bordered table-hover table-striped">
+    <thead>
+      <tr>
+        <th><%= t "admin.places.name" %></th>
+        <th class="text-center"><%= t "admin.places.name" %></th>
+        <th class="text-center"><%= t "admin.places.address" %></th>
+        <th class="text-center"><%= t "admin.places.city" %></th>
+        <th class="text-center"><%= t "admin.places.country" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @places.each do |place| %>
+        <tr>
+          <td class="col-sm-2"><%= link_to place["name"], "#" %></td>
+          <td class="col-sm-2"><%= truncate(raw strip_tags(place["address"])) %></td>
+          <td class="col-sm-2"><%= truncate(raw strip_tags(place["city"])) %></td>
+          <td class="col-sm-2"><%= truncate(raw strip_tags(place["country"])) %></td>
+          <td class="col-sm-2 text-center">
+            <%= link_to edit_admin_place_path(place["id"]) do %>
+              <i class="glyphicon glyphicon-edit"></i>
+            <% end %> |
+            <%= link_to "#", data: {confirm: t("admin.places.confirm")},
+              method: :delete do %>
+              <i class="glyphicon glyphicon-trash"></i>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

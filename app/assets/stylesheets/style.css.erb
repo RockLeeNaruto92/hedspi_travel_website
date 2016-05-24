@@ -112,13 +112,13 @@ html > body{
   width:134px;
   float:left;
   margin:0 7px 0 0;
-  background-image:url(images/bg_c.gif);
+  background-image:url(<%= image_path "bg_c" %>);
   background-position:top left;
   background-repeat:repeat-y;
 }
 .column div{
   width:134px;
-  background-image:url(images/bg_c_b.gif);
+  background-image:url(<%= image_path "bg_c_b" %>);
   background-position:bottom left;
   background-repeat:no-repeat;
 }
@@ -136,9 +136,9 @@ html > body{
   background-position:top left;
   background-repeat:no-repeat
 }
-.column .title1{background-image:url(images/title1_bg.gif);}
-.column .title2{background-image:url(images/title2_bg.gif);}
-.column .title3{background-image:url(images/title3_bg.gif);}
+.column .title1{background-image:url(<%= image_path "title1_bg" %>);}
+.column .title2{background-image:url(<%= image_path "title2_bg" %>);}
+.column .title3{background-image:url(<%= image_path "title3_bg" %>);}
 .c2{
   margin-top:33px
 }

@@ -1,0 +1,38 @@
+<% content_for :content_head, t("admin.airlines.index") %>
+
+<div class="col-md-10">
+  <%= link_to new_admin_airline_path, class: "btn btn-link" do %>
+    <i class="glyphicon glyphicon-plus"></i>
+    <%= t "admin.airlines.new" %>
+  <% end %>
+</div>
+<div class="table-responsive col-md-12">
+  <table class="table table-bordered table-hover table-striped">
+    <thead>
+      <tr>
+        <th><%= t "admin.airlines.code" %></th>
+        <th class="text-center"><%= t "admin.airlines.name" %></th>
+        <th class="text-center"><%= t "admin.airlines.website" %></th>
+        <th class="text-center"><%= t "admin.airlines.country" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @airlines.each do |airline| %>
+        <tr>
+          <td class="col-sm-2"><%= link_to airline["code"], "#" %></td>
+          <td class="col-sm-2"><%= truncate(raw strip_tags(airline["name"])) %></td>
+          <td class="col-sm-4"><%= truncate(raw strip_tags(airline["website"])) %></td>
+          <td class="col-sm-2 text-center">
+            <%= link_to edit_admin_airline_path(airline["id"]) do %>
+              <i class="glyphicon glyphicon-edit"></i>
+            <% end %> |
+            <%= link_to "#", data: {confirm: t("admin.airlines.confirm")},
+              method: :delete do %>
+              <i class="glyphicon glyphicon-trash"></i>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,38 @@
+<%= form_for [:admin, @airline],
+  html: {class: "form-horizontal", role: "form", id: "user-form"} do |f| %>
+
+  <div>
+    <%= render partial: "shared/admin/error_messages",
+      locals: {object: @airline} %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label t("admin.airlines.code"), class: "control-label left-alignment-label col-sm-3" %>
+    <div class="col-sm-9">
+      <%= f.text_field :code, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label t("admin.airlines.name"), class: "control-label left-alignment-label col-sm-3" %>
+    <div class="col-sm-9">
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label t("admin.airlines.website"), class: "control-label left-alignment-label col-sm-3" %>
+    <div class="col-sm-9">
+      <%= f.text_field :website, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-9 col-sm-offset-3">
+      <%= f.submit t("admin.action.submit"), class: "btn btn-primary" %>
+      <%= link_to admin_airlines_path do %>
+        <%= button_tag t("admin.action.cancel"), class: "btn btn-default",
+          type: :button %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

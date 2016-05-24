@@ -1,0 +1,71 @@
+<%= form_for @flight,
+  url: (["new", "create"].include?(request[:action]) ? admin_flights_path : admin_flight_path(@flight.id)),
+  method: (["new", "create"].include?(request[:action]) ? "POST" : "PUT"),
+  html: {class: "form-horizontal", role: "form", id: "user-form"} do |f| %>
+
+  <div>
+    <%= render partial: "shared/admin/error_messages",
+      locals: {object: @flight} %>
+  </div>
+
+  <%= f.hidden_field :id %>
+  <div class="form-group">
+    <%= f.label t("admin.flights.code"), class: "control-label left-alignment-label col-sm-3" %>
+    <div class="col-sm-9">
+      <%= f.text_field :code, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label t("admin.flights.airline"), class: "control-label left-alignment-label col-sm-3" %>
+    <div class="col-sm-9">
+      <%= f.select :airlineID, @airlines.map{|airline| [airline["name"], airline["id"]]}, {}, {class: "form-control"} %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label t("admin.flights.start_time"), class: "control-label left-alignment-label col-sm-3" %>
+    <div class="col-sm-9">
+      <%= f.datetime_local_field :startTime, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label t("admin.flights.end_time"), class: "control-label left-alignment-label col-sm-3" %>
+    <div class="col-sm-9">
+      <%= f.datetime_local_field :endTime, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label t("admin.flights.start_point"), class: "control-label left-alignment-label col-sm-3" %>
+    <div class="col-sm-9">
+      <%= f.text_field :startPoint, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label t("admin.flights.end_point"), class: "control-label left-alignment-label col-sm-3" %>
+    <div class="col-sm-9">
+      <%= f.text_field :endPoint, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label t("admin.flights.seats"), class: "control-label left-alignment-label col-sm-3" %>
+    <div class="col-sm-9">
+      <%= f.number_field :seats, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label t("admin.flights.cost"), class: "control-label left-alignment-label col-sm-3" %>
+    <div class="col-sm-9">
+      <%= f.number_field :cost, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-9 col-sm-offset-3">
+      <%= f.submit t("admin.action.submit"), class: "btn btn-primary" %>
+      <%= link_to admin_flights_path do %>
+        <%= button_tag t("admin.action.cancel"), class: "btn btn-default",
+          type: :button %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

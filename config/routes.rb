@@ -6,4 +6,13 @@ Rails.application.routes.draw do
   resources :tours, only: :show
   resources :hotels, only: [:index, :show]
   resources :bookings, only: [:index, :create]
+
+  namespace :admin do
+    root "airlines#index"
+    resources :places
+    resources :tours
+    resources :hotels
+    resources :airlines
+    resources :flights
+  end
 end
