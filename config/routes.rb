@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :bookings, only: [:index, :create]
 
   namespace :admin do
-    root "airlines#index"
+    root "places#index"
     resources :places
     resources :tours
     resources :hotels
